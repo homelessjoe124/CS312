@@ -1,0 +1,119 @@
+/* 
+#FFA34D with back of  #3C213F = 7.15:1
+#FFFFFF with back of #111827 = 17.73:1
+#FFFFFF with back of #3C213F = 14.17:1
+i havent used it by might use it 
+#05FF86 with back of #5E3762
+links to shit i used or referenced 
+https://www.w3schools.com/css/css3_flexbox.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow
+And the websties i went and looked at
+https://www.designrush.com/best-designs/websites/trends/most-beautiful-website-designs
+https://fireart.studio/blog/20-best-futuristic-website-examples-to-inspire-you
+https://www.dark.design
+*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #111827;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #3C213F;
+    text-align: center;
+    padding: 24px 20px;
+    border-bottom: 2px solid #FFA34D;
+}
+
+header h1 {
+    margin: 0 0 8px 0;
+    color: #FFA34D;
+}
+
+header p {
+    margin: 0 0 14px 0;
+    color: #FFFFFF;
+}
+
+nav a {
+    color: #FFA34D;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 6px #FFA34D;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+}
+.about-page main {
+    display: flex;
+    gap: 20px;
+}
+
+.about-page section {
+    flex: 1;
+}
+
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    background-color: #3C213F;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #FFA34D;
+}
+
+section p {
+    margin-bottom: 0;
+    color: #FFFFFF;
+}
+
+.imageeee {
+    width: 320px;
+    height: 320px;
+    background-color: black;
+    border: 3px solid #FFA34D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFA34D;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 14px;
+    background-color: #3C213F;
+    color: #FFFFFF;
+    border-top: 2px solid #FFA34D;
+}
+
