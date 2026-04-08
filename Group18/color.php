@@ -11,9 +11,9 @@ $excemption= [];
 $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black","Teal"];
 
  if ($_SERVER["REQUEST_METHOD"]=="POST"){
-    $table = $_POST["boxes"] ??"";
-    $colors = $_POST["color"] ?? "";
-    if ($table <1|| $tabe >26){
+    $table = $_POST["table"] ??"";
+    $colors = $_POST["colors"] ?? "";
+    if ($table <1|| $table >26){
         $excemption[] ="supposed to be between 1 and 26. pleaes pick again";
     }
     if($colors <1|| $colors>10){
@@ -53,10 +53,10 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
                 Then the colors you wish to use.
             </p>
             <form action= "color.php" method = "post">
-                <lable for = "table"> Rows and Collumns(1 to 26):</lable><br>
-                <input type ="number" id="table" name="table" min="1" max="26" value= "<?php echo htmlspecialcharts($table);?>"><br><br>
-                <lable for = "colors"> colors(1 to 10):</lable><br>
-                <input type ="number" id="colors" name="colors" min="1" max="10" value= "<?php echo htmlspecialcharts($colors);?>"><br><br>
+                <label for = "table"> Rows and Collumns(1 to 26):</label><br>
+                <input type ="number" id="table" name="table" min="1" max="26" value= "<?php echo htmlspecialchars($table);?>"><br><br>
+                <label for = "colors"> colors(1 to 10):</label><br>
+                <input type ="number" id="colors" name="colors" min="1" max="10" value= "<?php echo htmlspecialchars($colors);?>"><br><br>
                 <input type= "submit" value="generate">
             </form>
             <?php
@@ -70,7 +70,61 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
             ?>
 
         </section>
-        
+        <?php
+        if ($_SERVER["REQUEST_METHOD"]== "POST" && empty($excemption)): 
+        ?>
+        <section>
+            <h2> Color selection</h2>
+            <table>
+                <tr>
+                    <th> COLORS</th>
+                    <th> Choose Colors</th>
+                </tr>
+                <?php 
+                 for ($i=0; $i < $colors; $i++) : 
+                ?>
+                <tr>
+                    <td>
+                        COLOR <?php echo $i +1;?>
+                    </td>
+                    <td>
+                        <select name ="color<?php echo $i;?>">
+                            <?php foreach ($options as $index => $colorOptions):?>
+                                <option value="<?php echo $colorOptions; ?>" <?php if  ($index==$i) echo "selected"; ?>>
+                                    <?php
+                                    echo $colorOptions;
+                                    ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                </tr>
+                <?php endfor;?>
+            </table>
+        </section>
+        <section>
+            <h2> Table</h2>
+            <table class= "color-table">
+                <tr>
+                    <th></th>
+                    <?php for ($col =0; $col<$table; $col++): ?>
+                        <th> <?php echo chr(65 +$col); ?></th>
+                    <?php endfor;?>
+                </tr>
+                <?php for ($row =1; $row<= $table; $row++): ?>
+                    <tr>
+                        <th> <?php echo $row; ?></th>
+                        <?php for ($col=0; $col < $table; $col++): ?>
+                            <td></td>
+                        <?php endfor; ?>
+                    </tr>
+                    <?php endfor; ?>
+            </table>
+        </section>
+        <?php endif; ?>
     </main>
+    <footer>
+        <p>CS 312 Project. Created by group 18(Adrian Nieves, Miguel Mejia, Sandra Madrigal ) </p>
+    </footer>
 </body>
 </html>

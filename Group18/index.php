@@ -34,7 +34,7 @@
         </div>
         <div class="right">
             <div class="imageeee">
-                <p> ima put sum here probably</p>
+                <p> Welcome</p>
             </div>
         </div>
     </main>

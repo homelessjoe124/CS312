@@ -116,4 +116,50 @@ footer {
     color: #FFFFFF;
     border-top: 2px solid #FFA34D;
 }
+/*the selections and table csss seperate since its the most diffrent one */
+.Selection {
+    flex: 1;
+    padding: 24px;
+    display: block;
+}
 
+.Selection section {
+    background-color: #3C213F;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.Selection table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.Selection th,
+.Selection td {
+    border: 1px solid #FFA34D;
+    padding: 8px;
+    text-align: center;
+}
+
+.errors {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #5a1f1f;
+    border: 1px solid #FFA34D;
+    border-radius: 8px;
+}
+.color-table {
+    width: auto;
+    border-collapse: collapse;
+}
+
+.color-table th,
+.color-table td {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 1px solid #FFA34D;
+    text-align: center;
+}
