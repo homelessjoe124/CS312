@@ -42,7 +42,7 @@
             <p> </p>
         </section>
         <section>
-            <img src="placeholrderssss" alt="placeeholderss make sure to chnage" width="300">
+            <img src="Literally_me.jpg" alt="Miguels image" width="300">
             <h2> Miguel Mejia</h2>
             <p> Put a short about you paragrap. like three sentances
                 RANdomeees things to fileleRANdomeees things to filele sapsappspspspspspsp
