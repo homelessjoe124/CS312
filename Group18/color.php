@@ -76,10 +76,6 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
         <section>
             <h2> Color selection</h2>
             <table>
-                <tr>
-                    <th> COLORS</th>
-                    <th> Choose Colors</th>
-                </tr>
                 <?php 
                  for ($i=0; $i < $colors; $i++) : 
                 ?>
@@ -88,7 +84,7 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
                         COLOR <?php echo $i +1;?>
                     </td>
                     <td>
-                        <select name ="color<?php echo $i;?>">
+                        <select name ="color<?php echo $i;?>" class ="color-dropdown">
                             <?php foreach ($options as $index => $colorOptions):?>
                                 <option value="<?php echo $colorOptions; ?>" <?php if  ($index==$i) echo "selected"; ?>>
                                     <?php
@@ -101,6 +97,7 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
                 </tr>
                 <?php endfor;?>
             </table>
+            <p id="color-message"></p>
         </section>
         <section>
             <h2> Table</h2>
@@ -121,10 +118,56 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
                     <?php endfor; ?>
             </table>
         </section>
+        <section>
+            <form action= "print.php" method="post">
+                <input type="hidden" name="table" value="<?php echo htmlspecialchars($table);?>">
+                <input type="hidden" name="colors" value="<?php echo htmlspecialchars($colors);?>">
+                <input type="submit" value= "Printable Version">
+            </form>
+        </section>
         <?php endif; ?>
     </main>
     <footer>
         <p>CS 312 Project. Created by group 18(Adrian Nieves, Miguel Mejia, Sandra Madrigal ) </p>
     </footer>
+    <script>
+        /*
+        used this lecture
+         https://colostate-my.sharepoint.com/:p:/g/personal/arefin_colostate_edu/IQBZRDyzJzy8RIUP7imPsO09AYpcBvfpj35-AkmTtzOj6XY?e=onyeX9
+        and these websites we where given
+        https://www.w3schools.com/js/js_events.asp
+         */
+        document.addEventListener("DOMContentLoaded", function () {
+        let dropdowns = document.querySelectorAll(".color-dropdown");
+        let message = document.getElementById("color-message");
+
+        dropdowns.forEach(function(dropdown) {
+            dropdown.dataset.previous = dropdown.value;
+
+            dropdown.addEventListener("focus", function() {
+                this.dataset.previous = this.value;
+            });
+
+            dropdown.addEventListener("change", function() {
+                let currentValue = this.value;
+                let duplicateFound = false;
+
+                dropdowns.forEach(function(otherDropdown) {
+                    if (otherDropdown !== dropdown && otherDropdown.value === currentValue) {
+                        duplicateFound = true;
+                    }
+                });
+
+                if (duplicateFound) {
+                    message.textContent = "That color is already being used. Please choose a different one.";
+                    dropdown.value = dropdown.dataset.previous;
+                } else {
+                    message.textContent = "";
+                    dropdown.dataset.previous = currentValue;
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

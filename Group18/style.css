@@ -142,6 +142,14 @@ footer {
     padding: 8px;
     text-align: center;
 }
+.Selection table td:first-child{
+    width: 20%;
+
+}
+.Selection table td:last-child{
+    width: 80%;
+
+}
 
 .errors {
     margin-top: 15px;
@@ -162,4 +170,9 @@ footer {
     padding: 0;
     border: 1px solid #FFA34D;
     text-align: center;
+}
+#color-message{
+    color:#FFA34D;
+    font-weight: bold;
+    margin-top: 10px;
 }

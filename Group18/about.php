@@ -31,12 +31,14 @@
             </p>
         </section>
         <section>
-            <img src="placeholrderssss" alt="placeeholderss make sure to chnage" width="300">
+            <img src="Image.jpg" alt="Sandras image" width="300">
             <h2>Sandra Madrigal </h2>
-            <p> Put a short about you paragrap. like three sentances
-                RANdomeees things to fileleRANdomeees things to filele sapsappspspspspspsp
-                RANdomeees things to filele sapsappspspspspspspRANdomeees things to filele sapsappspspspspspsp
-                RANdomeees things to filele sapsappspspspspspspRANdomeees things to filele sapsappspspspspspsp
+            <p> 
+                Hello! My name is Sandra Madrigal-Sanchez and I am currently a 
+                Computer Science major here at CSU. I enjoy doing small things such
+                as baking, watching movies like IT or How The Grinch Stole Christmas
+                and building Legos. My favorite things to bake include cinnamon rolls 
+                banana bread and brown butter chocolate chip cookies.
 
             </p>
             <p> </p>
