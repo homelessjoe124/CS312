@@ -122,6 +122,11 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
             <form action= "print.php" method="post">
                 <input type="hidden" name="table" value="<?php echo htmlspecialchars($table);?>">
                 <input type="hidden" name="colors" value="<?php echo htmlspecialchars($colors);?>">
+
+                <?php for ($i = 0; $i < $colors; $i++): ?>
+                    <input type="hidden" name="selectedColors[]" id="hidden-color-<?php echo $i; ?>" value="<?php echo htmlspecialchars($_POST["color$i"] ?? $options[$i]); ?>">
+                <?php endfor; ?>
+
                 <input type="submit" value= "Printable Version">
             </form>
         </section>
@@ -141,7 +146,8 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
         let dropdowns = document.querySelectorAll(".color-dropdown");
         let message = document.getElementById("color-message");
 
-        dropdowns.forEach(function(dropdown) {
+        dropdowns.forEach(function(dropdown, index) {
+            let hiddenInput = document.getElementById("hidden-color-" + index);
             dropdown.dataset.previous = dropdown.value;
 
             dropdown.addEventListener("focus", function() {
@@ -165,22 +171,15 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
                     message.textContent = "";
                     dropdown.dataset.previous = currentValue;
                 }
+                if (hiddenInput) {
+                    hiddenInput.value = dropdown.value;
+                }
             });
         });
     });
     </script>
 
-    /* added a pipeline connecting to print.php (sending the selected colors for the talbe mainly)- Miguel */
-    <form action="print.php" method="post">
-        <input type="hidden" name="table" value="<?php echo htmlspecialchars($table); ?>">
-        <input type="hidden" name="colors" value=<?php echo htmlspecialchars($colors); ?>">
-        
-        <?php for ($i = 0; $i < $colors; $i++): ?>
-            <input type="hidden" name="selectedColors[]" value="<?php echo htmlspecialchars($_POST["color$i"] ?? $options[$i]); ?>">
-        <?php endfor; ?>
-        <input type="submit" value="Printable Version">
-
-    </form>
+    /* added a pipeline connecting to print.php (sending the selected colors as hiddenInput mainly)- Miguel */
 
 </body>
 </html>

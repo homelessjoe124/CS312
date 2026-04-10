@@ -9,6 +9,9 @@ $selectedColors = $_POST["selectedColors"] ?? [];
 <head> 
     <meta charset="UTF-8">
     <title>Printable View</title>
+
+    /* i will make aseparate stylesheet later im just too tired right now*/ 
+
     <style> 
 
         @media print{
@@ -39,7 +42,7 @@ $selectedColors = $_POST["selectedColors"] ?? [];
 
         .page {
             width: 760px;
-            margin: 20px;
+            margin: 0 auto;
             background-color: #f3f3f3;
             padding: 24px 28px 32px 28px;
             box-sizing: border-box;
