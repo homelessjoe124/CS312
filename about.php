@@ -46,13 +46,10 @@
         <section>
             <img src="Literally_me.jpg" alt="Miguels image" width="300">
             <h2> Miguel Mejia</h2>
-            <p> Put a short about you paragrap. like three sentances
-                RANdomeees things to fileleRANdomeees things to filele sapsappspspspspspsp
-                RANdomeees things to filele sapsappspspspspspspRANdomeees things to filele sapsappspspspspspsp
-                RANdomeees things to filele sapsappspspspspspspRANdomeees thingRANdomeees things to fileleRANdomeees things to filele sapsappspspspspspsp
-                RANdomeees things to filele sapsappspspspspspspRANdomeees things to filele sapsappspspspspspsp
+            <p> Hello, i am Miguel Mejia and i am a Computer Science major concentrating in Artificial Intelligence 
+                and Machine learning. Outside of school my passions are working out, martial arts, and building my own
+                ideas such as a weather prediction ML model. 
              </p>
-            <p> </p>
         </section>
     </main>
     <footer>

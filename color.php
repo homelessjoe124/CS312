@@ -169,5 +169,18 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
         });
     });
     </script>
+
+    /* added a pipeline connecting to print.php (sending the selected colors for the talbe mainly)- Miguel */
+    <form action="print.php" method="post">
+        <input type="hidden" name="table" value="<?php echo htmlspecialchars($table); ?>">
+        <input type="hidden" name="colors" value=<?php echo htmlspecialchars($colors); ?>">
+        
+        <?php for ($i = 0; $i < $colors; $i++): ?>
+            <input type="hidden" name="selectedColors[]" value="<?php echo htmlspecialchars($_POST["color$i"] ?? $options[$i]); ?>">
+        <?php endfor; ?>
+        <input type="submit" value="Printable Version">
+
+    </form>
+
 </body>
 </html>
