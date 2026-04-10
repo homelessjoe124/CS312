@@ -10,7 +10,6 @@ $selectedColors = $_POST["selectedColors"] ?? [];
     <meta charset="UTF-8">
     <title>Printable View</title>
 
-    /* i will make aseparate stylesheet later im just too tired right now*/ 
 
     <style> 
 

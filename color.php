@@ -179,7 +179,5 @@ $options =["Red","Orange","Yellow","Green","Blue","Purple","Grey","Brown","Black
     });
     </script>
 
-    /* added a pipeline connecting to print.php (sending the selected colors as hiddenInput mainly)- Miguel */
-
 </body>
 </html>
